@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30330.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingPlatform.UI", "TradingPlatform.UI\TradingPlatform.UI.csproj", "{69B3882D-19F1-42DD-8BDA-63C23779C8EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69B3882D-19F1-42DD-8BDA-63C23779C8EF}.Debug|x86.ActiveCfg = Debug|x86
+		{69B3882D-19F1-42DD-8BDA-63C23779C8EF}.Debug|x86.Build.0 = Debug|x86
+		{69B3882D-19F1-42DD-8BDA-63C23779C8EF}.Release|x86.ActiveCfg = Release|x86
+		{69B3882D-19F1-42DD-8BDA-63C23779C8EF}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AD5393A7-DB08-4D86-A99A-12A297BDBF10}
+	EndGlobalSection
+EndGlobal

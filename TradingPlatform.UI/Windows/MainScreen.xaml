@@ -1,0 +1,162 @@
+﻿<mahapp:MetroWindow x:Class="TradingPlatform.UI.Windows.MainScreen"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns:mahapp="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon"
+                    xmlns:local="clr-namespace:TradingPlatform.UI.Windows"
+                    mc:Ignorable="d"     
+                    Icon="..\Images\mainIcon.png"
+                    WindowStartupLocation="CenterScreen"
+                    Style="{StaticResource WindowStyle}"
+                    Title="Trading Platform">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <telerik:RadMenu VerticalAlignment="Top" x:Name="MainMenu" Background="Transparent" BorderBrush="Transparent">
+            <telerik:RadMenuItem Header="File">
+                <telerik:RadMenuItem Header="Connections" />
+                <telerik:RadMenuItem Header="Reload history" />
+                <telerik:RadMenuSeparatorItem/>
+                <telerik:RadMenuItem Header="Log out" />
+            </telerik:RadMenuItem>
+            <telerik:RadMenuItem Header="Open">
+                <telerik:RadMenuItem Header="New chart" />
+            </telerik:RadMenuItem>
+            <telerik:RadMenuItem Header="Tabs">
+                <telerik:RadMenuItem Header="Executions" />
+                <telerik:RadMenuItem Header="Accounts" />
+                <telerik:RadMenuItem Header="Alerts log" />
+            </telerik:RadMenuItem>
+            <telerik:RadMenuItem Header="Settings">
+                <telerik:RadMenuItem Header="General settings" />
+                <telerik:RadMenuItem Header="Symbols manager" />
+            </telerik:RadMenuItem>
+            <telerik:RadMenuItem Header="Help">
+                <telerik:RadMenuItem Header="About" />
+                <telerik:RadMenuItem Header="License information" />
+            </telerik:RadMenuItem>
+        </telerik:RadMenu>
+        <telerik:RadTabControl x:Name="mainTabControl" HeaderBackground="Transparent" Grid.Row="1" Margin="5">
+            <telerik:RadTabItem Header="Tab number 1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal" x:Name="toolbar" Grid.ColumnSpan="2">
+                        <StackPanel.Resources>
+                            <Style TargetType="{x:Type telerik:RadRibbonSplitButton}">
+                                <Setter Property="Width" Value="40"/>
+                                <Setter Property="Margin" Value="0 4 4 4"/>
+                                <Setter Property="BorderBrush" Value="Black"/>
+                            </Style>
+                        </StackPanel.Resources>
+                        <telerik:RadRibbonSplitButton>
+                            <telerik:RadRibbonSplitButton.Content>
+                                <TextBlock FontFamily="{StaticResource TelerikWebUI}" Text="{StaticResource GlyphWrench}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </telerik:RadRibbonSplitButton.Content>
+                        </telerik:RadRibbonSplitButton>
+                        <telerik:RadRibbonSplitButton>
+                            <telerik:RadRibbonSplitButton.Content>
+                                <TextBlock FontFamily="{StaticResource TelerikWebUI}" Text="{StaticResource GlyphFolder}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </telerik:RadRibbonSplitButton.Content>
+                        </telerik:RadRibbonSplitButton>
+                        <telerik:RadRibbonSplitButton>
+                            <telerik:RadRibbonSplitButton.Content>
+                                <TextBlock FontFamily="{StaticResource TelerikWebUI}" Text="{StaticResource GlyphClock}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </telerik:RadRibbonSplitButton.Content>
+                        </telerik:RadRibbonSplitButton>
+                        <telerik:RadRibbonSplitButton>
+                            <telerik:RadRibbonSplitButton.Content>
+                                <Image Margin="7 0 0 0" Source="..\Images\stats.png" Height="14" ></Image>
+                            </telerik:RadRibbonSplitButton.Content>
+                        </telerik:RadRibbonSplitButton>
+                        <telerik:RadRibbonSplitButton HorizontalContentAlignment="Center">
+                            <telerik:RadRibbonSplitButton.Content>
+                                <Image Margin="7 0 0 0" Source="..\Images\cursor.png" Height="14" ></Image>
+                            </telerik:RadRibbonSplitButton.Content>
+                        </telerik:RadRibbonSplitButton>
+                        <telerik:RadRibbonSplitButton>
+                            <telerik:RadRibbonSplitButton.Content>
+                                <Image Margin="7 0 0 0" Source="..\Images\bar-chart.png" Height="14" ></Image>
+                            </telerik:RadRibbonSplitButton.Content>
+                        </telerik:RadRibbonSplitButton>
+                        <telerik:RadRibbonSplitButton>
+                            <telerik:RadRibbonSplitButton.Content>
+                                <TextBlock FontFamily="{StaticResource TelerikWebUI}" Text="{StaticResource GlyphZoom}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </telerik:RadRibbonSplitButton.Content>
+                        </telerik:RadRibbonSplitButton>
+                        <telerik:RadRibbonToggleButton Width="40" BorderBrush="Black" Margin="0 4">
+                            <telerik:RadRibbonToggleButton.Content>
+                                <TextBlock FontFamily="{StaticResource TelerikWebUI}" Text="{StaticResource GlyphSelectBox}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </telerik:RadRibbonToggleButton.Content>
+                        </telerik:RadRibbonToggleButton>
+
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" x:Name="drawingTools">
+                        <StackPanel.Resources>
+                            <Style TargetType="{x:Type telerik:RadButton}">
+                                <Setter Property="Width" Value="25"/>
+                                <Setter Property="Height" Value="25"/>
+                                <Setter Property="Margin" Value="4 0 4 4"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="BorderBrush" Value="Transparent"/>
+                            </Style>
+                        </StackPanel.Resources>
+                        <telerik:RadButton Content="#"/>
+                        <telerik:RadButton Content="#"/>
+                        <telerik:RadButton Content="#"/>
+                        <telerik:RadButton Content="#"/>
+                        <telerik:RadButton>
+                            <telerik:RadButton.Content>
+                                <Image Source="..\Images\hamburger-menu.png" Height="20" ></Image>
+                            </telerik:RadButton.Content>
+                        </telerik:RadButton>
+                        <telerik:RadButton>
+                            <telerik:RadButton.Content>
+                                <Image Source="..\Images\hidden.png" Height="20" ></Image>
+                            </telerik:RadButton.Content>
+                        </telerik:RadButton>
+                        <telerik:RadButton>
+                            <telerik:RadButton.Content>
+                                <Image Source="..\Images\ruler.png" Height="20" ></Image>
+                            </telerik:RadButton.Content>
+                        </telerik:RadButton>
+                        
+
+                    </StackPanel>
+                    <telerik:RadCartesianChart Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="2" >
+                        <telerik:RadCartesianChart.HorizontalAxis>
+                            <telerik:CategoricalAxis/>
+                        </telerik:RadCartesianChart.HorizontalAxis>
+                        <telerik:RadCartesianChart.VerticalAxis>
+                            <telerik:LinearAxis />
+                        </telerik:RadCartesianChart.VerticalAxis>
+                        <telerik:RadCartesianChart.Series>
+                            <telerik:CandlestickSeries>
+                                <telerik:CandlestickSeries.DataPoints>
+                                    <telerik:OhlcDataPoint Category="Monday" Open="5" Close="4" Low="2" High="10" />
+                                    <telerik:OhlcDataPoint Category="Tuseday" Open="10" Close="8" Low="7" High="12"/>
+                                    <telerik:OhlcDataPoint Category="Wednesday" Open="6" Close="8" Low="5" High="9"/>
+                                    <telerik:OhlcDataPoint Category="Thursday" Open="3" Close="7" Low="3" High="8"/>
+                                    <telerik:OhlcDataPoint Category="Friday" Open="5" Close="6" Low="4" High="7"/>
+                                </telerik:CandlestickSeries.DataPoints>
+                            </telerik:CandlestickSeries>
+                        </telerik:RadCartesianChart.Series>
+                    </telerik:RadCartesianChart>
+
+                </Grid>
+            </telerik:RadTabItem>
+        </telerik:RadTabControl>
+    </Grid>
+</mahapp:MetroWindow>
